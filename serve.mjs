@@ -9,7 +9,8 @@ const files = new Map([
   ['/index.html', ['index.html', 'text/html; charset=utf-8']],
   ['/style.css', ['style.css', 'text/css; charset=utf-8']],
   ['/demo.js', ['demo.js', 'text/javascript; charset=utf-8']],
-  ['/core.js', ['core.js', 'text/javascript; charset=utf-8']]
+  ['/core.js', ['core.js', 'text/javascript; charset=utf-8']],
+  ['/gamification.js', ['gamification.js', 'text/javascript; charset=utf-8']]
 ]);
 
 createServer(async (request, response) => {
@@ -28,4 +29,4 @@ createServer(async (request, response) => {
     response.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' });
     response.end('Unable to read demo file');
   }
-}).listen(8000, '127.0.0.1', () => console.log('Demo: http://localhost:8000/'));
+}).listen(Number(process.env.DEMO_PORT || 8000), '127.0.0.1', () => console.log(`Demo: http://localhost:${process.env.DEMO_PORT || 8000}/`));
