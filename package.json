@@ -1,0 +1,10 @@
+{
+  "name": "predicts-league-portfolio-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "test": "node --test core.test.js"
+  }
+}
